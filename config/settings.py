@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
+    "catalog"
 ]
 
 MIDDLEWARE = [
@@ -76,7 +76,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycorg2",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "HW21_1",
         "USER": "postgres",
         "PASSWORD": "201023",

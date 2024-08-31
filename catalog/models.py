@@ -2,6 +2,33 @@ from django.db import models
 
 
 # Create your models here.
+class Contact(models.Model):
+    contact = models.CharField(
+        max_length=100,
+        verbose_name="Номер телефона",
+        help_text="Укажите номер телефона контакта",
+    )
+    email = models.EmailField(
+        verbose_name="Адрес электронной почты",
+        help_text="Укажите адрес электронной почты контакта",
+    )
+    inn = models.CharField(
+        max_length=12,
+        verbose_name="ИНН",
+        help_text="Укажите ИНН контакта",
+    )
+    ogrn = models.CharField(
+        max_length=15,
+        verbose_name="ОГРН",
+        help_text="Укажите ОГРН контакта",
+    )
+    class Meta:
+        verbose_name = "Контакт"
+        verbose_name_plural = "Контакты"
+        ordering = ["contact"]
+
+    def __str__(self):
+        return self.contact
 
 
 class Category(models.Model):
