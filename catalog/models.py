@@ -102,3 +102,52 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name}, {self.category}'
+
+
+class Blog(models.Model):
+    title = models.CharField(
+        max_length=100,
+        verbose_name="Заголовок",
+        help_text="Укажите заголовок",
+    )
+    slug = models.CharField(
+        max_length=100,
+        verbose_name="slug",
+        blank=True,
+        null=True,
+    )
+    content = models.TextField(
+        verbose_name="Содержимое",
+        help_text="Укажите содержимое",
+        blank=True,
+        null=True,
+    )
+    image = models.ImageField(
+        upload_to="blog/photo",
+        blank=True,
+        null=True,
+        verbose_name="Фото",
+    )
+    created_at = models.DateTimeField(
+        verbose_name="Дата создания записи",
+        help_text="Введите дату",
+        blank=True,
+        null=True,
+    )
+    is_published = models.BooleanField(
+        verbose_name="Публикация",
+        help_text="Выберите публикацию",
+        default=True,
+    )
+    views_count = models.IntegerField(
+        verbose_name="Количество просмотров",
+        default=0,
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Блог'
+        verbose_name_plural = 'Блоги'
+
