@@ -13,8 +13,10 @@
                     <li>Цена: {{ product.price_pay }}</li>
                     <li>Дата изменения: {{ product.manufactured_at }}</li>
                 </ul>
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
-                <a class="btn btn-primary" href="{% url 'catalog:list'%}" role="button">Блог</a>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                    <a class="btn btn-primary" href="{% url 'object.blog'%}" role="button">Блог</a>
+                </div>
             </div>
         </div>
     </div>
