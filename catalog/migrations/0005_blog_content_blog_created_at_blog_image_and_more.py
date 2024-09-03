@@ -5,7 +5,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("catalog", "0004_blog"),
+        ("blog", "0004_blog"),
     ]
 
     operations = [
@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
             model_name="blog",
             name="image",
             field=models.ImageField(
-                blank=True, null=True, upload_to="blog/photo", verbose_name="Фото"
+                blank=True, null=True, upload_to="blog/image", verbose_name="Фото"
             ),
         ),
         migrations.AddField(
