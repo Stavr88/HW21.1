@@ -13,9 +13,6 @@ urlpatterns = [
     path('<int:pk>/view', BlogDetailView.as_view(), name='blog_detail'),
     path('update/<int:pk>', BlogUpdateView.as_view(), name='blog_update'),
     path('<int:pk>/delete', BlogDeleteView.as_view(), name='blog_delete'),
-    # path('blog/<int:pk>/', BlogDetailView.as_view(), name='blog_detail'),
-    # path('blog/<int:pk>/update/', BlogUpdateView.as_view(), name='blog_update'),
-    # path('blog/<int:pk>/delete/', BlogDeleteView.as_view(), name='blog_delete'),
     path('<int:pk>/', is_published, name='is_published'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
