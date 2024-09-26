@@ -18,7 +18,7 @@ class Blog(models.Model):
     )
 
     image = models.ImageField(
-        upload_to="catalog/image",
+        upload_to="blog/image",
         verbose_name="Изображение",
         help_text="Загрузите изображение",
         blank=True,

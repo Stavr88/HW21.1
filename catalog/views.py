@@ -22,6 +22,6 @@ def contacts(request):
         name = request.POST.get('name')
         phone = request.POST.get('phone')
         message = request.POST.get('message')
-        print(f"Имя пользователя : {name}\nТелефон: {phone}\nСообщение: {message}\n")
+        print(f"Имя пользователя : {name}Телефон: {phone}Сообщение: {message}")
 
-    return render(request, 'catalog/contacts.html')
+    return render(request, 'contacts.html')
