@@ -57,14 +57,23 @@ class Product(models.Model):
         verbose_name="Цена за покупку",
         help_text="Введите цену"
     )
-    created_at = models.DateTimeField(verbose_name="Дата создания записи", help_text="Введите дату")
+    created_at = models.DateTimeField(
+        verbose_name="Дата создания записи",
+        help_text="Введите дату",
+        auto_now_add=True
+    )
     updated_at = models.DateTimeField(
         verbose_name="Дата изменения записи",
-        help_text="Введите дату"
+        help_text="Введите дату",
+        auto_now=True
     )
     manufactured_at = models.DateTimeField(
         verbose_name="Дата производства продукта",
         help_text="Введите дату",
+    )
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name='Опубликовано',
     )
 
     class Meta:
@@ -74,4 +83,36 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name}, {self.category}'
+
+
+class Version(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name='product',
+        verbose_name="Продукт",
+    )
+    num_version = models.IntegerField(
+        blank=True,
+        null=True,
+        verbose_name="Номер версии",
+        help_text="Введите номер версии"
+    )
+    name_version = models.CharField(
+        max_length=100,
+        verbose_name="Наименование версии",
+        help_text="Укажите название версии",
+    )
+    status_version = models.BooleanField(default=True, verbose_name="Статус версии",)
+
+    class Meta:
+        verbose_name = "Версия"
+        verbose_name_plural = "Версии"
+        ordering = ["product", "num_version"]
+
+    def __str__(self):
+        return f'{self.product}'
+
 
