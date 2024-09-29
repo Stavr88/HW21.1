@@ -82,6 +82,9 @@ DATABASES = {
         "PASSWORD": "201023",
         "HOST": "127.0.0.1",
         "PORT": 5432,
+        "OPTIONS": {
+            "client_encoding": "utf8",
+        }
     }
 }
 
@@ -131,3 +134,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+
