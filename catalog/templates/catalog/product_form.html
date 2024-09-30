@@ -22,7 +22,7 @@
             <div class="card">
                 <div class="card-body">
                   {{ formset.management_form }}
-                    {% for form in formset.form %}
+                    {% for form in formset.forms %}
                     {{ form.as_p }}
                     {% endfor %}
                 </div>

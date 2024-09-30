@@ -18,7 +18,13 @@ class ProductForm(StyleFormMixin, ModelForm):
     bad_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
     class Meta:
         model = Product
-        fields = ('name', 'manufactured_at', 'image')  #перечисляем поля для отображения
+        fields = ('name',
+                  'manufactured_at',
+                  'image',
+                  'price_pay',
+                  'description',
+                  'category',
+                  )  #перечисляем поля для отображения
 
     def clean_name(self):
         clean_name = self.cleaned_data.get('name')

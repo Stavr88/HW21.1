@@ -53,13 +53,6 @@ class ProductCreateView(CreateView):
 
     success_url = reverse_lazy('catalog:products_list')
 
-    # def form_valid(self, form):
-    #     if form.is_valid():
-    #         new_blog = form.save()
-    #         new_blog.slug = slugify(new_blog.title)
-    #         new_blog.save()
-    #     return super().form_valid(form)
-
 
 class ProductUpdateView(UpdateView):
     model = Product
@@ -87,14 +80,6 @@ class ProductUpdateView(UpdateView):
             return self.render_to_response(self.get_context_data(form=form, formset=formset))
 
 
-
-
-    # def form_valid(self, form):
-    #     if form.is_valid():
-    #         new_blog = form.save()
-    #         new_blog.slug = slugify(new_blog.title)
-    #         new_blog.save()
-    #     return super().form_valid(form)
 
 
 

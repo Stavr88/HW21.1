@@ -20,9 +20,9 @@
                    role="button">Подробнее</a>
                 <div class="card m-4 box-shadow">
                     {% for version in product.versions.all %}
-                    {% if version.status_version %}
-                    <p>Версия: {{ version.num_version }} Название: {{ version.name_version }}</p>
-                    {% endif %}
+                        {% if version.status_version %}
+                            <p>Версия: {{ version.num_version }} Название: {{ version.name_version }}</p>
+                        {% endif %}
                     {% endfor %}
                 </div>
 
