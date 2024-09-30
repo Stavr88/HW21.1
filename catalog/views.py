@@ -72,7 +72,7 @@ class ProductUpdateView(UpdateView):
         context_data = self.get_context_data()
         formset = context_data['formset']
         if form.is_valid() and formset.is_valid():
-            self.object = form.save
+            self.object.save()
             formset.instance = self.object
             formset.save()
             return super().form_valid(form)
